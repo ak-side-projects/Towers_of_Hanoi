@@ -12,7 +12,11 @@
   Game.prototype.isValidMove = function (startTowerIdx, endTowerIdx) {
     var startTower = this.towers[startTowerIdx];
     var endTower = this.towers[endTowerIdx];
-
+		
+		if (!endTower) {
+			return false;
+		}
+		
     if (startTower.length === 0) {
       return false;
     } else if (endTower.length == 0) {
